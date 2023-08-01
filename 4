@@ -1,0 +1,104 @@
+//1)First name
+3.	<html>
+4.	<head>
+5.	
+6.	<title>validating a textbox</title>
+7.	
+8.	<script language="javascript">
+9.	function button_click()
+10.	{
+11.	var fname=f.fname.value; 
+12.	var spchar = "!@#$%^&*()+=-[]\\\';,./{}|\":<>?~";
+13.	var number="0123456789";
+14.	if(fname.length<6)
+15.	{
+16.	  alert("first name atleast 6 characters");
+17.	}
+18.	if(fname!="")
+19.	{
+20.	for (var i=0;i<fname.length;i++)
+21.	{
+22.	if(spchar.indexOf(fname.charAt(i)) != -1)
+23.	{
+24.	alert ("Userid should not have special characters");
+25.	f.fname.value=" ";
+26.	return false;
+27.	}
+28.	}
+29.	}
+30.	if(fname!="")
+31.	{
+32.	for (var i=0;i<fname.length;i++)
+33.	{
+34.	if(number.indexOf(fname.charAt(i)) != -1)
+35.	{
+36.	alert ("Userid should not have numbers");
+37.	f.fname.value="";
+38.	return false;
+39.	}
+40.	}
+41.	if(fname.length>=6)
+42.	  alert("valid username");
+43.	}
+44.	}
+45.	</script>
+46.	
+47.	<body>
+48.	<center>
+49.	<form name="f">
+50.	<table>
+51.	<h2 align="center">USER NAME VALIDATION</h2>
+52.	<tr>
+53.	<td align="right">USERNAME:</td>
+54.	<td><input type="text" name="fname" maxlength=20 size=30></td>
+55.	</tr>
+56.	<br>
+57.	<tr>
+58.	<td></td>
+59.	<td><input type="button" value="SUBMIT" onClick="button_click()"></td></tr>
+60.	</form>
+61.	</table>
+62.	</center>
+63.	</body>
+64.	</html>
+
+//2)Password
+<html>
+<head>
+<title>PASSWORD VALIDATION</title>
+<script language="javascript">
+function pass()
+{
+var pw=f.pw.value; 
+var cpw=f.cpw.value; 
+if(pw.length<6)
+{
+alert("PASSWORD MUST BE 6 CHARACTERS");
+}
+if(pw!=cpw)
+{
+alert("PASSWORD DON'T MATCH");
+}
+else if(pw.length>=6)
+alert("PASSWORD VALIDATION SUCCESS");
+}
+</script>
+</head>
+<body>
+<form name="f">
+<table align="center">
+<h2 align="center">PASSWORD VALIDATION</h2>
+<br>
+<tr>
+<td align="right">PassWord:</td>
+<td align="left"><input type="PassWord" maxlength="10" size="30"name="pw"></td>
+</tr>
+<tr>
+<td align="right">Confirm PassWord:</td>
+<td align="left"><input type="PassWord" maxlength="10" size="30"name="cpw"></td>
+</tr>
+<tr>
+<td></td>
+<td><input type="button" value="SUBMIT" onClick="pass()"/></td>
+</tr>
+</table> </form> </body> </html>
